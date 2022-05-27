@@ -10,16 +10,14 @@ RUN set -xe; \
       jpeg-dev \
       mariadb-client \
       unzip \
-      zip; \
-    apk add --no-cache --virtual .build-deps \
-      imap-dev \
-      krb5-dev \
+      zip \
       freetype-dev \
       libpng-dev \
       imagemagick-dev \
       libxml2-dev \
       libzip-dev \
-      libressl-dev \
+      libressl-dev; \
+    apk add --no-cache --virtual .build-deps \
       autoconf \
       make \
       g++; \
