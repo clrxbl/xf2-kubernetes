@@ -16,7 +16,9 @@ RUN set -xe; \
       imagemagick-dev \
       libxml2-dev \
       libzip-dev \
-      libressl-dev; \
+      libressl-dev \
+      imap-dev \
+      krb5-dev; \
     apk add --no-cache --virtual .build-deps \
       autoconf \
       make \
