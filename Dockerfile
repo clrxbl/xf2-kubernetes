@@ -26,6 +26,7 @@ RUN set -xe; \
     pecl install imagick; \
     pecl install redis; \
     docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/; \
+    docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
     docker-php-ext-configure zip; \
     docker-php-ext-enable \
       imagick \
@@ -53,7 +54,6 @@ RUN { \
     echo 'opcache.fast_shutdown=1'; \
     echo 'opcache.enable_cli=1'; \
     } > /usr/local/etc/php/conf.d/opcache-recommended.ini; \
-    PHP_OPENSSL=yes docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
     mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"; \
     echo "pm.status_path = /status" >> /usr/local/etc/php-fpm.d/zz-docker.conf; \
     wget -O /usr/local/bin/php-fpm-healthcheck \
