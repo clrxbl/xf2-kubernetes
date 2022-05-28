@@ -19,6 +19,7 @@ RUN set -xe; \
       libressl-dev \
       imap-dev \
       libgomp \
+      gmp-dev \
       krb5-dev; \
     apk add --no-cache --virtual .build-deps \
       autoconf \
