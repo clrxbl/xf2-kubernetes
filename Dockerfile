@@ -42,6 +42,7 @@ RUN set -xe; \
       exif \
       gd \
       zip \
+      gmp \
       opcache; \
     apk del .build-deps
 
